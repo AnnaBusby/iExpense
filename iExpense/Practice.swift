@@ -4,6 +4,11 @@
 //
 //  Created by Anna Busby on 21/12/2023.
 //
+// This is for project 7 day 36
+// showing different sheets and dismissing them - .sheet, isPresented
+// watching for state changes in a class vs a struct - @Observable
+// adding and deleting rows in a list - @Enviroment, .toolbar edit
+//storing user data using @AppStorage or UserDefaults.Set
 
 import SwiftUI
 
