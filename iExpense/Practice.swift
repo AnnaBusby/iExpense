@@ -19,6 +19,12 @@ class User {
     var lastName = "Baggins"
 }
 
+//Codable allows Swift to create and archive the struct
+struct UserStruct: Codable {
+    var firstName: String
+    var lastName: String
+}
+
 struct Practice: View {
     
     //here is one way to store user data
@@ -101,12 +107,24 @@ struct Practice2: View {
     
     var name: String
     
+    @State private var testUser = UserStruct(firstName: "Taylor", lastName: "Swift")
+    
     var body: some View {
         Text("Hello \(name)")
         
         //This button initates the dismiss action
         Button ("Goodbye") {
             dismiss()
+        }
+        
+        //This button creates and stores user data,
+        Button ("Save test user") {
+            let encoder = JSONEncoder()
+            //you can also use decoder
+            
+            if let data = try? encoder.encode(testUser) {
+                UserDefaults.standard.set(data, forKey: "UserDate")
+            }
         }
     }
     
