@@ -16,6 +16,12 @@ class User {
 
 struct Practice: View {
     
+    //here is one way to store user data
+    @State private var tapCount = UserDefaults.standard.integer(forKey: "Tap")
+    
+    //Here is another way to store user data
+    @AppStorage ("Tap2") private var tapCount2 = 0
+    
     @State private var user = User()
     
     @State private var isShowing = false
@@ -24,6 +30,22 @@ struct Practice: View {
     @State private var currentNumber = 1
     
     var body: some View {
+        
+        Button("Tap count: \(tapCount)") {
+            tapCount += 1
+            
+            //store this data under the key Tap
+            UserDefaults.standard.set(tapCount, forKey: "Tap")
+        }
+        
+        //this one will automatically store it
+        Button("Tap count 2: \(tapCount2)") {
+            tapCount2 += 1
+            
+        }
+        
+        Spacer()
+        
         Text("Hello, your name is \(user.firstName) \(user.lastName)")
         
         TextField("Enter first name:", text: $user.firstName)
