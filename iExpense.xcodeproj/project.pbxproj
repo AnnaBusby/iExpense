@@ -11,6 +11,7 @@
 		392B27502B34865F00678E7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B274F2B34865F00678E7B /* ContentView.swift */; };
 		392B27522B34866100678E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392B27512B34866100678E7B /* Assets.xcassets */; };
 		392B27552B34866100678E7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392B27542B34866100678E7B /* Preview Assets.xcassets */; };
+		392B275C2B34893400678E7B /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B275B2B34893400678E7B /* Practice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		392B274F2B34865F00678E7B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		392B27512B34866100678E7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		392B27542B34866100678E7B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		392B275B2B34893400678E7B /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				392B274D2B34865F00678E7B /* iExpenseApp.swift */,
 				392B274F2B34865F00678E7B /* ContentView.swift */,
+				392B275B2B34893400678E7B /* Practice.swift */,
 				392B27512B34866100678E7B /* Assets.xcassets */,
 				392B27532B34866100678E7B /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392B275C2B34893400678E7B /* Practice.swift in Sources */,
 				392B27502B34865F00678E7B /* ContentView.swift in Sources */,
 				392B274E2B34865F00678E7B /* iExpenseApp.swift in Sources */,
 			);
