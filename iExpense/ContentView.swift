@@ -45,23 +45,52 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            
-                            Text(item.type)
+                Section("Personal") {
+                    ForEach(expenses.items) { item in
+                        if item.type == "Personal" {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(item.name)
+                                        .font(.headline)
+                                    
+                                    Text(item.type)
+                                }
+                                Spacer()
+                                
+                                Text(item.amount, format: .currency(code:  Locale.current.currency?.identifier ?? "USD"))
+                                    .foregroundStyle(styling(item: item))
+                                
+                            }
                         }
-                        Spacer()
-                        
-                        Text(item.amount, format: .currency(code:  Locale.current.currency?.identifier ?? "USD"))
-                            .foregroundStyle(styling(item: item))
-                        
                     }
+                    .onDelete(perform: removeItems)
                 }
-                .onDelete(perform: removeItems)
+                
+                Section("Business") {
+                    ForEach(expenses.items) { item in
+                        if item.type == "Business" {
+                            
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(item.name)
+                                        .font(.headline)
+                                    
+                                    Text(item.type)
+                                }
+                                Spacer()
+                                
+                                Text(item.amount, format: .currency(code:  Locale.current.currency?.identifier ?? "USD"))
+                                    .foregroundStyle(styling(item: item))
+                                
+                            }
+                        }
+                    }
+                    .onDelete(perform: removeItems)
+                }
+
             }
+            
+            
             .navigationTitle("iExpense")
             .toolbar {
                 Button("Add Expsense", systemImage: "plus") {
@@ -82,11 +111,11 @@ struct ContentView: View {
     
     func styling(item: ExpenseItem) -> Color {
         if item.amount < 10 {
-            return .black
+            return .green
         } else if item.amount > 100 {
             return .red
         } else {
-            return .blue
+            return .black
         }
     }
     
