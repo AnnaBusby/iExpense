@@ -56,6 +56,8 @@ struct ContentView: View {
                         Spacer()
                         
                         Text(item.amount, format: .currency(code:  Locale.current.currency?.identifier ?? "USD"))
+                            .foregroundStyle(styling(item: item))
+                        
                     }
                 }
                 .onDelete(perform: removeItems)
@@ -76,6 +78,16 @@ struct ContentView: View {
     func removeItems(at offset: IndexSet) {
         expenses.items.remove(atOffsets: offset)
         
+    }
+    
+    func styling(item: ExpenseItem) -> Color {
+        if item.amount < 10 {
+            return .black
+        } else if item.amount > 100 {
+            return .red
+        } else {
+            return .blue
+        }
     }
     
 }
