@@ -13,8 +13,6 @@ struct AddView: View {
     
     let expenses: Expenses
     
-    @State private var title = "Expense Name"
-    
     @State private var name = "Expense Name"
     @State private var type = "Personal"
     @State private var amount = 0.0
